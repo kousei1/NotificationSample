@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="description" content="Mema lang po">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#FFE1C4">
+</head>
+<body>
+    <button id="notif">Hello
+
+    </button>
+    <script src="js/app.js"></script>
+    <script>
+        const button = document.querySelector("button");
+        button.addEventListener("click", () => {
+            Notification.requestPermission().then(perm => { 
+                if(perm === "granted"){
+                    new Notification("Example Notification", {
+                    body: "This is sample",
+                })
+                alert(perm);
+                }
+               
+            })
+
+            
+        })
+    </script>
+    
+</body>
+</html>
